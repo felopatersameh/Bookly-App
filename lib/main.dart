@@ -1,12 +1,12 @@
+import 'package:bookly/Core/Routes/route_app.dart';
 import 'package:bookly/Features/Home/Data/Repos/home_repo_imple.dart';
-import 'package:bookly/Features/Home/ViewModel/FeatureCubit/featured_cubit.dart';
 import 'package:bookly/Features/Home/ViewModel/NewsBooksCubit/news_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'Core/bloc_observer.dart';
 import 'Core/network/dio.dart';
-import 'Features/Splash/View/splash_screen.dart';
+import 'Features/Home/ViewModel/NovelsBooksCubit/novels_book_cubit.dart';
 
 // * mvvm
 // Core=>
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
             create: (context) =>
-                FeaturedCubit(HomeRepoImpl())..fetchNewsBooksBooks()),
+                NovelsBooksCubit(HomeRepoImpl())..fetchNewsBooksBooks()),
         BlocProvider(
             create: (context) =>
                 NewsBooksCubit(HomeRepoImpl())..fetchNewsBooksBooks()),
@@ -44,7 +44,9 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: const Color(0xff100B20),
             textTheme:
                 GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)),
-        home: const SplashViewScreen(),
+        // home: const SplashViewScreen(),
+        onGenerateRoute: GeneratorRoutes.getRoute,
+        initialRoute: AppRoutes.initialRoute,
       ),
     );
   }
