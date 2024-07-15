@@ -23,10 +23,9 @@ class GeneratorRoutes {
         return MaterialPageRoute(builder: (_) => const HomePage());
       case (AppRoutes.viewBooksRoute):
         return MaterialPageRoute(builder: (_) {
-          final item = setting.arguments as BookModel;
          return  BlocProvider(
             create: (context) => SimilarBooksCubit(HomeRepoImpl()),
-            child:  ViewInformationBook(item:item,),
+            child:  ViewInformationBook(item:setting.arguments as BookModel,),
           );
         });
       default:
