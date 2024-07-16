@@ -4,6 +4,7 @@ import 'package:bookly/Features/ViewBooks/ViewModel/SimilarBooksCubit/similar_bo
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../Features/Search/View/search_screen.dart';
 import '../../Features/Splash/View/splash_screen.dart';
 import '../../Features/ViewBooks/View/view_book.dart';
 import '../Models/book_model.dart';
@@ -12,6 +13,7 @@ class AppRoutes {
   static const String initialRoute = '/';
   static const String homeRoute = 'Home/';
   static const String viewBooksRoute = 'ViewBooks/';
+  static const String searchRoute = 'Search/';
 }
 
 class GeneratorRoutes {
@@ -21,6 +23,8 @@ class GeneratorRoutes {
         return MaterialPageRoute(builder: (_) => const SplashViewScreen());
       case (AppRoutes.homeRoute):
         return MaterialPageRoute(builder: (_) => const HomePage());
+        case (AppRoutes.searchRoute):
+        return MaterialPageRoute(builder: (_) => const SearchScreen());
       case (AppRoutes.viewBooksRoute):
         return MaterialPageRoute(builder: (_) {
          return  BlocProvider(

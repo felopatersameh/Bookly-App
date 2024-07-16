@@ -4,23 +4,8 @@ import 'package:flutter/material.dart';
 Future<void> pushNext(context, String screen, {Object? arguments}) async {
   await Navigator.pushNamed(context, screen, arguments: arguments);
 }
-//
-// Future<void> pushNextByInformation(context, {
-//   required String name,
-//   required String photo,
-//   required String id,
-// }) async {
-//   await Navigator.pushNamed(
-//     context,
-//     AppRoutes.chatRoute,
-//     arguments: <String, dynamic>{
-//       'name': name,
-//       'photo': photo,
-//       'id': id,
-//     },
-//   );
-// }
-//
+
+
 // Future<void> pushNextInTask(context,ModelPost task ) async {
 //   await Navigator.pushNamed(
 //     context,
