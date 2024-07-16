@@ -17,6 +17,17 @@ import 'Features/Home/ViewModel/NovelsBooksCubit/novels_book_cubit.dart';
 // 2-,view => Ui
 // 3-,ViewModel(Manger)=> stateManagement
 // )
+
+
+
+// todo => [1-searchScreen] , [2-layoutScreen Contain the (Card And homeScreen)] , [3-Edit in SimilarBooks]  , [4-Edit Logo App] , [5-Change Name App to Bookly]
+
+//Done =>
+
+
+
+
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
