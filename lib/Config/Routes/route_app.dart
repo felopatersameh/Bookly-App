@@ -1,13 +1,14 @@
-import 'package:bookly/Features/Home/Data/Repos/home_repo_imple.dart';
-import 'package:bookly/Features/Home/View/home_screen.dart';
-import 'package:bookly/Features/ViewBooks/ViewModel/SimilarBooksCubit/similar_books_cubit.dart';
+import 'package:bookly/Core/Utils/service_locator.dart';
+import 'package:bookly/Feature/Books/domain/use_cases/similar_books_use_case.dart';
+import 'package:bookly/Feature/Home/presentation/pages/home_screen.dart';
+import 'package:bookly/Feature/Books/presentation/manager/similar_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../Features/Search/View/search_screen.dart';
-import '../../Features/Splash/View/splash_screen.dart';
-import '../../Features/ViewBooks/View/view_book.dart';
-import '../Models/book_model.dart';
+import '../../Feature/Research/presentation/pages/search_screen.dart';
+import '../../Feature/Start/splash_screen.dart';
+import '../../Feature/Books/presentation/pages/view_book.dart';
+import '../../Core/Models/book_model.dart';
 
 class AppRoutes {
   static const String initialRoute = '/';
@@ -23,13 +24,16 @@ class GeneratorRoutes {
         return MaterialPageRoute(builder: (_) => const SplashViewScreen());
       case (AppRoutes.homeRoute):
         return MaterialPageRoute(builder: (_) => const HomePage());
-        case (AppRoutes.searchRoute):
+      case (AppRoutes.searchRoute):
         return MaterialPageRoute(builder: (_) => const SearchScreen());
       case (AppRoutes.viewBooksRoute):
         return MaterialPageRoute(builder: (_) {
-         return  BlocProvider(
-            create: (context) => SimilarBooksCubit(HomeRepoImpl()),
-            child:  ViewInformationBook(item:setting.arguments as BookModel,),
+          return BlocProvider(
+            create: (context) =>
+                SimilarBooksCubit(getIt<SimilarBooksUseCase>()),
+            child: ViewInformationBook(
+              item: setting.arguments as BookModel,
+            ),
           );
         });
       default:

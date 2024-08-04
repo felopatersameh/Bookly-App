@@ -1,0 +1,1 @@
+import 'package:flutter/material.dart';import 'package:flutter_svg_provider/flutter_svg_provider.dart';const assets = 'Assets/Images';class AppConstant {  static const String logoPhoto = '$assets/Logo.svg';  static Widget appLogo() => const Image(        image: Svg(          logoPhoto,        ),        filterQuality: FilterQuality.high,      );}
