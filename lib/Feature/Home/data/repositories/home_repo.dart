@@ -1,0 +1,1 @@
+import 'package:bookly/Core/Utils/Entities/book_entities.dart';import 'package:dartz/dartz.dart';import '../../../../Core/Utils/Errors/failure.dart';abstract class HomeRepo {  Future<Either<Failure, List<BookEntities>>> fetchBooksPictures();  Future<Either<Failure, List<BookEntities>>> fetchAllBooks();}

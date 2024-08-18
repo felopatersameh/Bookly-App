@@ -1,0 +1,1 @@
+import 'package:bookly/Core/Utils/Entities/book_entities.dart';import 'package:dartz/dartz.dart';import '../../../../Core/Utils/Errors/failure.dart';//dart pub add dartzabstract class SearchRepo {  Future<Either<Failure, List<BookEntities>>> search(      {required String category});}
