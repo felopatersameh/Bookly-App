@@ -1,16 +1,9 @@
-# bookly
+# Bookly
 
-A new Flutter project.
+**Bookly** is an app designed for book enthusiasts, particularly those interested in novels and computer science literature. The app allows users to browse reviews, search for specific titles, and purchase books directly through a secure payment gateway.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Browse Reviews:** Explore reviews for a wide range of novels and computer science books.
+- **Search Functionality:** Search for books by title to quickly find what you're looking for.
+- **Secure Purchases:** Buy books through a secure payment gateway using Stripe.
