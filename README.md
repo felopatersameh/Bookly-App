@@ -1,7 +1,7 @@
 # Bookly
 
 <p align="center">
-  <img src="Assets/Images/play_store_512" alt="Logo App" width="150" />
+  <img src="Assets/Images/play_store_512" width="150" />
 </p>
 
 **Bookly** is an app designed for book enthusiasts, particularly those interested in novels and computer science literature. The app allows users to browse reviews, search for specific titles, and purchase books directly through a secure payment gateway.
