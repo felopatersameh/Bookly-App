@@ -1,9 +1,13 @@
 # Bookly
 
-<div style="position: relative">
-  <img src="Assets/Images/ic_launcher_background.png" style="position: absolute; width: 100%; height: 100%;">
-  <img src="Assets/Images/logo.svg" style="position: absolute; width: 100%; height: 100%;">
-</div>
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+ 
+  <image href="Assets/Images/ic_launcher_background.png" x="0" y="0" height="300px" width="300px" />
+
+
+  <image href="Assets/Images/logo.svg" x="75" y="75" height="150px" width="150px" />
+</svg>
+
 
 **Bookly** is an app designed for book enthusiasts, particularly those interested in novels and computer science literature. The app allows users to browse reviews, search for specific titles, and purchase books directly through a secure payment gateway.
 
