@@ -10,17 +10,9 @@ class TotalPrice extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(
-          title,
-          textAlign: TextAlign.center,
-          style: Styles.textStyle18,
-        ),
+        Text(title, textAlign: TextAlign.center, style: Styles.textStyle18),
         const Spacer(),
-        Text(
-          value,
-          textAlign: TextAlign.center,
-          style: Styles.textStyle18,
-        )
+        Text(value, textAlign: TextAlign.center, style: Styles.textStyle18),
       ],
     );
   }

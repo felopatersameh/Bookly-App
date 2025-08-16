@@ -1,1 +1,17 @@
-import 'package:bookly/Core/Utils/Entities/book_entities.dart';sealed class SimilarBooksState {}final class SimilarBooksInitial extends SimilarBooksState {}final class SimilarBooksLoading extends SimilarBooksState {}final class SimilarBooksSuccess extends SimilarBooksState {  final List<BookEntities> books;  SimilarBooksSuccess({required this.books});}final class SimilarBooksFailure extends SimilarBooksState {  final String error;  SimilarBooksFailure({required this.error});}
+import 'package:bookly/Core/Utils/Entities/book_entities.dart';
+
+sealed class SimilarBooksState {}
+
+final class SimilarBooksInitial extends SimilarBooksState {}
+
+final class SimilarBooksLoading extends SimilarBooksState {}
+
+final class SimilarBooksSuccess extends SimilarBooksState {
+  final List<BookEntities> books;
+  SimilarBooksSuccess({required this.books});
+}
+
+final class SimilarBooksFailure extends SimilarBooksState {
+  final String error;
+  SimilarBooksFailure({required this.error});
+}

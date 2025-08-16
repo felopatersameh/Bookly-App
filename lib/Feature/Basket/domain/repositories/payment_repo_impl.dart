@@ -1,1 +1,27 @@
-import 'package:dartz/dartz.dart';import 'package:dio/dio.dart';import '../../../../Core/Utils/Errors/failure.dart';import '../../../../Core/network/service_strip.dart';import '../../data/repositories/payment_repo.dart';import '../Entities/payment_input_entities.dart';class PaymentRepoImpl extends PaymentRepo {  @override  Future<Either<Failure, bool>> makePaymentIntent(      {required PaymentInputEntities paymentInputEntities}) async {    try {      final StripService stripService = StripService();      await stripService.makePaymentIntent(          paymentInputEntities: paymentInputEntities);      return right(true);    } catch (e) {      if (e is DioException) {        return left(ServerFailure.fromDioError(e));      } else {        return left(ServerFailure.fromResponse(e.hashCode, e));      }    }  }}
+import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
+import '../../../../Core/Utils/Errors/failure.dart';
+import '../../../../Core/network/service_strip.dart';
+import '../../data/repositories/payment_repo.dart';
+import '../Entities/payment_input_entities.dart';
+
+class PaymentRepoImpl extends PaymentRepo {
+  @override
+  Future<Either<Failure, bool>> makePaymentIntent({
+    required PaymentInputEntities paymentInputEntities,
+  }) async {
+    try {
+      final StripService stripService = StripService();
+      await stripService.makePaymentIntent(
+        paymentInputEntities: paymentInputEntities,
+      );
+      return right(true);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      } else {
+        return left(ServerFailure.fromResponse(e.hashCode, e));
+      }
+    }
+  }
+}

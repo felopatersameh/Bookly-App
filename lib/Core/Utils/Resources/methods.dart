@@ -1,1 +1,44 @@
-import '../Models/sale_info.dart';String printName(List<String> name) {  String print = '';  for (int i = 0; i < name.length; i++) {    print = "$print${name[i]}";    if (i < name.length - 1) {      print = "$print\n";    }  }  return print;}String isFree(SaleInfo object) {  final String print;  if (!object.isEbook!) {    return "Not Available ";  } else {    if (object.saleability == "FOR_SALE") {      print =          '${object.listPrice!.amount!.toInt()} ${object.listPrice!.currencyCode}';      return print.length > 8 ? print.substring(0, 8) : print.padRight(8);    }    return object.saleability!;  }}String formatDate() {  DateTime dateTime = DateTime.now();  final day = dateTime.day;  final month = dateTime.month;  final year = dateTime.year;  return "$day/$month/$year";}String formatTime() {  DateTime dateTime = DateTime.now();  final hour = dateTime.hour;  final minute = dateTime.minute;  final period = hour < 12 ? 'AM' : 'PM';  final formattedHour = hour % 12 == 0 ? 12 : hour % 12;  final formattedMinute = minute.toString().padLeft(2, '0');  return '$formattedHour:$formattedMinute $period';}
+import '../Models/sale_info.dart';
+
+String printName(List<String> name) {
+  String print = '';
+  for (int i = 0; i < name.length; i++) {
+    print = "$print${name[i]}";
+    if (i < name.length - 1) {
+      print = "$print\n";
+    }
+  }
+  return print;
+}
+
+String isFree(SaleInfo object) {
+  final String print;
+  if (!object.isEbook!) {
+    return "Not Available ";
+  } else {
+    if (object.saleability == "FOR_SALE") {
+      print =
+          '${object.listPrice!.amount!.toInt()} ${object.listPrice!.currencyCode}';
+      return print.length > 8 ? print.substring(0, 8) : print.padRight(8);
+    }
+    return object.saleability!;
+  }
+}
+
+String formatDate() {
+  DateTime dateTime = DateTime.now();
+  final day = dateTime.day;
+  final month = dateTime.month;
+  final year = dateTime.year;
+  return "$day/$month/$year";
+}
+
+String formatTime() {
+  DateTime dateTime = DateTime.now();
+  final hour = dateTime.hour;
+  final minute = dateTime.minute;
+  final period = hour < 12 ? 'AM' : 'PM';
+  final formattedHour = hour % 12 == 0 ? 12 : hour % 12;
+  final formattedMinute = minute.toString().padLeft(2, '0');
+  return '$formattedHour:$formattedMinute $period';
+}

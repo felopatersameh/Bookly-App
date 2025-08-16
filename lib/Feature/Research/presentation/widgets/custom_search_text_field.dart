@@ -1,1 +1,50 @@
-import 'package:bookly/Feature/Research/presentation/manager/search_cubit.dart';import 'package:flutter/material.dart';class CustomSearchTextField extends StatefulWidget {  const CustomSearchTextField({super.key});  @override  State<CustomSearchTextField> createState() => _CustomSearchTextFieldState();}class _CustomSearchTextFieldState extends State<CustomSearchTextField> {  late TextEditingController search = TextEditingController();  @override  void initState() {    search = TextEditingController(text: "");    super.initState();  }  @override  Widget build(BuildContext context) {    return TextFormField(      onChanged: (result) {        SearchCubit.get(context).category = result;        SearchCubit.get(context).search();      },      controller: search,      decoration: InputDecoration(        enabledBorder: buildOutlineInputBorder(),        focusedBorder: buildOutlineInputBorder(),        hintText: 'Search',        suffixIcon: IconButton(          onPressed: () {},          icon: Opacity(            opacity: .8,            child: IconButton(                onPressed: () => SearchCubit.get(context).search(),                icon: const Icon(                  Icons.search,                  size: 22,                )),          ),        ),      ),    );  }  OutlineInputBorder buildOutlineInputBorder() {    return OutlineInputBorder(      borderSide: const BorderSide(        color: Colors.white,      ),      borderRadius: BorderRadius.circular(        12,      ),    );  }}
+import 'package:bookly/Feature/Research/presentation/manager/search_cubit.dart';
+import 'package:flutter/material.dart';
+
+class CustomSearchTextField extends StatefulWidget {
+  const CustomSearchTextField({super.key});
+  @override
+  State<CustomSearchTextField> createState() => _CustomSearchTextFieldState();
+}
+
+class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
+  late TextEditingController search = TextEditingController();
+  @override
+  void initState() {
+    search = TextEditingController(text: "");
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      onChanged: (result) {
+        SearchCubit.get(context).category = result;
+        SearchCubit.get(context).search();
+      },
+      controller: search,
+      decoration: InputDecoration(
+        enabledBorder: buildOutlineInputBorder(),
+        focusedBorder: buildOutlineInputBorder(),
+        hintText: 'Search',
+        suffixIcon: IconButton(
+          onPressed: () {},
+          icon: Opacity(
+            opacity: .8,
+            child: IconButton(
+              onPressed: () => SearchCubit.get(context).search(),
+              icon: const Icon(Icons.search, size: 22),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  OutlineInputBorder buildOutlineInputBorder() {
+    return OutlineInputBorder(
+      borderSide: const BorderSide(color: Colors.white),
+      borderRadius: BorderRadius.circular(12),
+    );
+  }
+}

@@ -1,1 +1,21 @@
-part of 'main_cubit.dart';abstract class MainState {}final class MainInitial extends MainState {}class ConnectivityLoading extends MainState {}class ConnectivityConnected extends MainState {}class ConnectivityDisconnected extends MainState {}class AddSuccessful extends MainState {}class AddError extends MainState {}class AddLoading extends MainState {}class RemoveSuccessful extends MainState {}class RemoveLoading extends MainState {}
+part of 'main_cubit.dart';
+
+abstract class MainState {}
+
+final class MainInitial extends MainState {}
+
+class ConnectivityLoading extends MainState {}
+
+class ConnectivityConnected extends MainState {}
+
+class ConnectivityDisconnected extends MainState {}
+
+class AddSuccessful extends MainState {}
+
+class AddError extends MainState {}
+
+class AddLoading extends MainState {}
+
+class RemoveSuccessful extends MainState {}
+
+class RemoveLoading extends MainState {}

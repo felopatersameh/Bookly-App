@@ -32,18 +32,13 @@ Future<void> restorePushReplacement(context, String screen) async {
 }
 
 Future<void> pushNextAndRemove(context, String screen) async {
-  await Navigator.pushNamedAndRemoveUntil(
-    context,
-    screen,
-    (route) => true,
-  );
+  await Navigator.pushNamedAndRemoveUntil(context, screen, (route) => true);
 }
 
-void popScreen(
-  context,
-) {
+void popScreen(context) {
   Navigator.pop(context);
 }
+
 void popHome(BuildContext context) {
   Navigator.popUntil(context, ModalRoute.withName('Home/'));
 }

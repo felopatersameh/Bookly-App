@@ -1,1 +1,18 @@
-part of 'books_cubit.dart';sealed class BooksState {}final class HomeInitial extends BooksState {}///////////////////////////////////////final class GetAllBooksLoading extends BooksState {}final class GetAllBooksSuccess extends BooksState {  final List<BookEntities> books;  GetAllBooksSuccess({required this.books});}final class GetAllBooksFailure extends BooksState {  final String error;  GetAllBooksFailure({required this.error});}//////////////////////////////////////////
+part of 'books_cubit.dart';
+
+sealed class BooksState {}
+
+final class HomeInitial
+    extends BooksState {} ///////////////////////////////////////
+
+final class GetAllBooksLoading extends BooksState {}
+
+final class GetAllBooksSuccess extends BooksState {
+  final List<BookEntities> books;
+  GetAllBooksSuccess({required this.books});
+}
+
+final class GetAllBooksFailure extends BooksState {
+  final String error;
+  GetAllBooksFailure({required this.error});
+} //////////////////////////////////////////

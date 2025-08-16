@@ -7,8 +7,6 @@ class ResulScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: ThankYouViewBody(),
-    );
+    return const Scaffold(body: ThankYouViewBody());
   }
 }

@@ -1,1 +1,13 @@
-import 'package:flutter/material.dart';class CustomMassage extends StatelessWidget {  final String massage;  const CustomMassage({super.key, required this.massage});  @override  Widget build(BuildContext context) {    // return SnackBar(    //     behavior: SnackBarBehavior.floating,    //     backgroundColor: Colors.transparent,    //     elevation: 0,    //     content: Container(    //         padding: const EdgeInsets.all(16),    //         height: 90,    //         decoration: const BoxDecoration(    //             color: Color(0xFFC72C41),    //             borderRadius: BorderRadius.all(Radius.circular(20))),    //         child: Text(massage)));    return Center(      child: Padding(        padding: const EdgeInsets.all(8.0),        child: Text(massage),      ),    );  }}
+import 'package:flutter/material.dart';
+
+class CustomMassage extends StatelessWidget {
+  final String massage;
+  const CustomMassage({super.key, required this.massage});
+  @override
+  Widget build(BuildContext context) {
+    // return SnackBar( //     behavior: SnackBarBehavior.floating, //     backgroundColor: Colors.transparent, //     elevation: 0, //     content: Container( //         padding: const EdgeInsets.all(16), //         height: 90, //         decoration: const BoxDecoration( //             color: Color(0xFFC72C41), //             borderRadius: BorderRadius.all(Radius.circular(20))), //         child: Text(massage)));
+    return Center(
+      child: Padding(padding: const EdgeInsets.all(8.0), child: Text(massage)),
+    );
+  }
+}

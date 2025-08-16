@@ -1,1 +1,30 @@
-import 'package:bookly/Core/Utils/Resources/text_style.dart';import 'package:flutter/material.dart';import 'dart:ui';void showSnackBar(BuildContext context, String message) {  ScaffoldMessenger.of(context).showSnackBar(    SnackBar(      content: Stack(        children: [          BackdropFilter(            filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),            child: Container(              color: Colors.black.withOpacity(0.7),            ),          ),          Column(            crossAxisAlignment: CrossAxisAlignment.start,            children: [              Text(                message,                style: Styles.textStyle16.copyWith(color: Colors.white),              ),            ],          ),        ],      ),      backgroundColor: Colors.transparent,      elevation: 8.0,      behavior: SnackBarBehavior.fixed,    ),  );}
+import 'package:bookly/Core/Utils/Resources/text_style.dart';
+import 'package:flutter/material.dart';
+import 'dart:ui';
+
+void showSnackBar(BuildContext context, String message) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Stack(
+        children: [
+          BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+            child: Container(color: Colors.black.withValues(alpha: 0.7)),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                message,
+                style: Styles.textStyle16.copyWith(color: Colors.white),
+              ),
+            ],
+          ),
+        ],
+      ),
+      backgroundColor: Colors.transparent,
+      elevation: 8.0,
+      behavior: SnackBarBehavior.fixed,
+    ),
+  );
+}

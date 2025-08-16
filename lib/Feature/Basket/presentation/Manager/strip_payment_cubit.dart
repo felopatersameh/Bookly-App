@@ -1,1 +1,28 @@
-import 'package:flutter_bloc/flutter_bloc.dart';import 'package:meta/meta.dart';import '../../domain/Entities/payment_input_entities.dart';import '../../domain/use_cases/payment_use_case.dart';part 'strip_payment_state.dart';class StripPaymentCubit extends Cubit<StripPaymentState> {  StripPaymentCubit(this.paymentUseCase) : super(StripPaymentInitial());  final PaymentUseCase paymentUseCase;  static StripPaymentCubit get(context) => BlocProvider.of(context);  Future makeStripPayment(      {required PaymentInputEntities paymentInputEntities}) async {    emit(Loading());    await paymentUseCase        .execute(paymentInputEntities: paymentInputEntities)        .then((onValue) => onValue.fold((failure) {              emit(Failure(error: failure.errMessage));              print(failure.errMessage);            }, (item) => emit(Success(item: item))));  }}
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:meta/meta.dart';
+import 'dart:developer';
+import '../../domain/Entities/payment_input_entities.dart';
+import '../../domain/use_cases/payment_use_case.dart';
+
+part 'strip_payment_state.dart';
+
+class StripPaymentCubit extends Cubit<StripPaymentState> {
+  StripPaymentCubit(this.paymentUseCase) : super(StripPaymentInitial());
+  final PaymentUseCase paymentUseCase;
+
+  static StripPaymentCubit get(context) => BlocProvider.of(context);
+
+  Future makeStripPayment({
+    required PaymentInputEntities paymentInputEntities,
+  }) async {
+    emit(Loading());
+    await paymentUseCase
+        .execute(paymentInputEntities: paymentInputEntities)
+        .then(
+          (onValue) => onValue.fold((failure) {
+            emit(Failure(error: failure.errMessage));
+            log(failure.errMessage);
+          }, (item) => emit(Success(item: item))),
+        );
+  }
+}
