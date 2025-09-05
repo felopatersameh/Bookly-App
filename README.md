@@ -1,12 +1,15 @@
 # Bookly
 
+
+
+an app designed for book enthusiasts, particularly those interested in novels and computer science literature. The app allows users to browse reviews, search for specific titles, and purchase books directly through a secure payment gateway.
+
 <p align="center">
-  <img width="800" height="600" alt="tasky logo" src="https://github.com/user-attachments/assets/da171c3b-650e-4597-8181-15e1e89b3f10" />
+  
+
+<img width="1280" height="720" alt="logo" src="https://github.com/user-attachments/assets/68c1e6a8-e19a-4032-b6b2-132edb5dccee"   />
 
 </p>
-
-**Bookly** is an app designed for book enthusiasts, particularly those interested in novels and computer science literature. The app allows users to browse reviews, search for specific titles, and purchase books directly through a secure payment gateway.
-
 ## Features
 
 - **Browse Reviews:** Explore reviews for a wide range of novels and computer science books.
